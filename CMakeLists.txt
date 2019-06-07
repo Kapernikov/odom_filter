@@ -41,10 +41,14 @@ find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Local includes
 include_directories(
   include
+  ${tf2_INCLUDE_DIRS}
+  ${tf2_geometry_msgs_INCLUDE_DIRS}
 )
 
 #=============
@@ -64,6 +68,8 @@ ament_target_dependencies(
   nav_msgs
   rclcpp
   tf2_msgs
+  tf2
+  tf2_geometry_msgs
 )
 
 #=============
